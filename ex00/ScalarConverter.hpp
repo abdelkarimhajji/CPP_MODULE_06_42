@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 11:57:04 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/17 11:31:46 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/17 14:00:32 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,93 +23,9 @@
 class  ScalarConverter
 {
     public:
-        static void convert(std::string arg)
-        {
-            try{
-                if(arg.length() == 1 && !std::isdigit(arg[0]))
-                {
-                    std::cout << "char: "  << "'" << arg << "'" << std::endl;
-                    int number = arg[0];
-                    std::cout << "int: " << number << std::endl;
-                    std::cout  << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(number) << "f" << std::endl;
-                    std::cout << std::fixed << "double " << std::fixed << std::setprecision(1) << static_cast<double>(number) << std::endl;
-                    return;
-                }
-                if (arg.find('.') == std::string::npos)
-                {
-                    std::stringstream ss(arg);
-                    int number;
-                    if (!(ss >> number))
-                        throw "";
-                    if (number > std::numeric_limits<char>::max() || number < std::numeric_limits<char>::min())
-                        std::cout << "char: impossible" << std::endl;
-                    else if(!std::isprint(number))
-                        std::cout << "char: not display" << std::endl;
-                    else
-                        std::cout << "char: " << "'" << static_cast<char>(number) << "'" << std::endl;
-                    std::cout << "int: " << number << std::endl;
-                    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(number) << "f" << std::endl;
-                    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(number) << std::endl;
-                    return;
-                }
-            }
-            catch (...)
-            {
-                
-            }
-
-            try{
-                std::stringstream ss(arg);
-                float flt;
-                if (!(ss >> flt))
-                    throw "";
-                if (static_cast<int>(flt) > std::numeric_limits<char>::max() || static_cast<int>(flt) < std::numeric_limits<char>::min())
-                    std::cout << "char : impossible" << std::endl;
-                else if(!std::isprint(static_cast<char>(flt)))
-                    std::cout << "char : not display" << std::endl;
-                else
-                    std::cout << "char : " << "'" << static_cast<char>(flt) << "'" << std::endl;
-                if(flt > std::numeric_limits<int>::max() || flt < std::numeric_limits<int>::min())
-                    std::cout << "int : impossible" << std::endl;
-                else
-                    std::cout << "int : " << static_cast<int>(flt) << std::endl;
-                std::cout << "float: " << flt << "f" << std::endl;
-                std::cout << "double: " << flt << std::endl;
-                return;
-            }
-            catch (...)
-            {
-                
-            }
-            try{
-                std::stringstream ss(arg);
-                double flt;
-                if(!(ss >> flt))
-                    throw "";
-                if(static_cast<int>(flt) > std::numeric_limits<char>::max() || static_cast<int>(flt) < std::numeric_limits<char>::min())
-                    std::cout << "char : impossible" << std::endl;
-                else if(!std::isprint(static_cast<char>(flt)))
-                    std::cout << "char : not display" << std::endl;
-                else
-                    std::cout << "char : " << "'" << static_cast<char>(flt) << "'" << std::endl;
-
-                if(flt > std::numeric_limits<int>::max() || flt < std::numeric_limits<int>::min())
-                    std::cout << "int : impossible" << std::endl;
-                else
-                    std::cout << "int : " << static_cast<int>(flt) << std::endl;
-                
-                if(flt > std::numeric_limits<float>::max() || flt < std::numeric_limits<float>::min())
-                    std::cout << "float : " << static_cast<float>(flt) << std::endl;
-                else
-                    std::cout << "float : " << static_cast<float>(flt) << "f" << std::endl;
-                std::cout << "double : " << flt << std::endl;
-                return;
-            }
-            catch (...)
-            {
-                //  std::cout << std::numeric_limits<double>::max() << std::endl;
-            }
-        }
+        ScalarConverter();
+        ~ScalarConverter();
+        static void convert(std::string arg);
 };
 
 #endif

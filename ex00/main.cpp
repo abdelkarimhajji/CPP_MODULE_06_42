@@ -6,15 +6,20 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 11:59:48 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/17 11:31:27 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/17 12:55:43 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-    ScalarConverter::convert("35555");
+    if (ac != 2)
+    {
+        std::cout << "error arg\n";
+        return 1;
+    }
+    ScalarConverter::convert(av[1]);
     // std::cout << "--------------------------------\n";
     // ScalarConverter::convert("nan");
     // std::cout << "--------------------------------\n";
