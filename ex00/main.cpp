@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 11:59:48 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/16 19:10:57 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/16 19:45:34 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    ScalarConverter::convert("a");
+    ScalarConverter::convert("5.5");
     // std::cout << "--------------------------------\n";
     // ScalarConverter::convert("nan");
     // std::cout << "--------------------------------\n";
