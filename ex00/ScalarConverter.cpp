@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 12:56:14 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/17 15:37:30 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/17 20:20:30 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,11 @@ int ScalarConverter::checkIfFloat(std::string arg)
         std::cout << "int : impossible" << std::endl;
     else
         std::cout << "int : " << static_cast<int>(flt) << std::endl;
-        std::cout << "float: " << flt << "f" << std::endl;
-    std::cout << "double: " << flt << std::endl;
+        if(arg[arg.size() - 1] == '0')
+            std::cout << "float: "<< std::fixed << std::setprecision(1) << flt << "f" << std::endl;
+        else
+            std::cout << "float: " << flt << "f" << std::endl;
+        std::cout << "double: " << flt << std::endl;
     return 1;
 }
 
