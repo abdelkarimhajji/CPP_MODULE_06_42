@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:47:53 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/18 07:40:47 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 08:04:10 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@ Serializer::Serializer()
 Serializer::~Serializer()
 {
     
+}
+
+
+Serializer::Serializer(Serializer const &serialize)
+{
+    *this = serialize;
+}
+Serializer  &Serializer::operator=(Serializer const &serialize)
+{
+    (void)serialize;
+    return *this;
 }
 
 uintptr_t Serializer::serialize(Data* ptr)
