@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:47:49 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/17 20:39:08 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:04:04 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 int main()
 {
+    Data*   data = new Data;
     
+    uintptr_t  i = Serializer::serialize(data);
+
+    Data* o = Serializer::deserialize(i);
+
+    if(data == o)
+        std::cout << "the same adress \n";
+    else
+        std::cout << "not the same adress \n";
+    delete data;
+
     return 0;
 }
