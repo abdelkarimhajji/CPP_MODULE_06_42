@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 07:44:46 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/18 12:09:10 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:24:31 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void identify(Base* p)
 void identify(Base& p)
 {
     try {
-        A& a = dynamic_cast<A&>(p);
+        (void)dynamic_cast<A&>(p);
         std::cout << "A class" << std::endl;
     } catch(...) {
         try {
-            B& b = dynamic_cast<B&>(p);
+            (void)dynamic_cast<B&>(p);
             std::cout << "B class" << std::endl;
         } catch(...) {
             std::cout << "C class" << std::endl;
