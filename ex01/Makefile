@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = Serializer
 
 SRC = Serializer.cpp main.cpp
 

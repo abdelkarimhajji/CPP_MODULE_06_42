@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 12:56:14 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/17 20:20:30 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 14:55:26 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ScalarConverter::checkIfChar(std::string arg)
         int number = arg[0];
         std::cout << "int: " << number << std::endl;
         std::cout  << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(number) << "f" << std::endl;
-        std::cout << std::fixed << "double " << std::fixed << std::setprecision(1) << static_cast<double>(number) << std::endl;
+        std::cout << std::fixed << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(number) << std::endl;
         return 1;
     }
     return 0;
@@ -41,7 +41,7 @@ int ScalarConverter::checkIfInt(std::string arg)
     if (arg.find('.') == std::string::npos)
     {
         std::stringstream ss(arg);
-        int number;
+        long number;
         if (!(ss >> number))
             return 0;
         if (number > std::numeric_limits<char>::max() || number < std::numeric_limits<char>::min())
@@ -50,7 +50,10 @@ int ScalarConverter::checkIfInt(std::string arg)
             std::cout << "char: not display" << std::endl;
         else
             std::cout << "char: " << "'" << static_cast<char>(number) << "'" << std::endl;
-        std::cout << "int: " << number << std::endl;
+        if (number > std::numeric_limits<int>::max() || number < std::numeric_limits<int>::min())
+            std::cout << "int: impossible" << std::endl;
+        else
+            std::cout << "int: " << number << std::endl;
         std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(number) << "f" << std::endl;
         std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(number) << std::endl;
         return 1;

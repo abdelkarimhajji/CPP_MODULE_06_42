@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = Base
 
 SRC = Base.cpp main.cpp
 
