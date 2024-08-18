@@ -6,8 +6,13 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 08:16:18 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/18 08:21:00 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 09:37:35 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+
+Base::~Base()
+{
+    std::cout << "destructer call\n";
+}
