@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:47:55 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/18 07:49:32 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 15:29:05 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Serializer
 {
     private:
         Serializer();
+        ~Serializer();
         
     public:
-        ~Serializer();
         Serializer(Serializer const &serialize);
         Serializer  &operator=(Serializer const &serialize);
         static uintptr_t serialize(Data* ptr);

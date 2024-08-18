@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 11:57:04 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/17 15:27:29 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/18 15:26:32 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 class  ScalarConverter
 {
     private:
+        ScalarConverter();
+        ~ScalarConverter();
         static int checkIfChar(std::string arg);
         static int checkIfInt(std::string arg);
         static int checkIfFloat(std::string arg);
         static int checkIfDouble(std::string arg);
     public:
-        ScalarConverter();
-        ~ScalarConverter();
         static void convert(std::string arg);
 };
 
